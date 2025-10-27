@@ -1,0 +1,179 @@
+
+
+/* Animações customizadas para WZAI */
+
+@keyframes scroll-logos {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulse-green {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes line-progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes dotFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-scroll-logos {
+  animation: scroll-logos 24s linear infinite;
+}
+
+.animate-pulse-green {
+  animation: pulse-green 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-float-up {
+  animation: float-up 0.6s ease-out;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+  background-size: 1000px 100%;
+}
+
+.animate-line-progress {
+  animation: line-progress 1.6s ease-in-out forwards;
+}
+
+.typing-dot {
+  animation: dotFloat 1s infinite;
+}
+
+.typing-dot.delay-150 {
+  animation-delay: 0.15s;
+}
+
+.typing-dot.delay-300 {
+  animation-delay: 0.3s;
+}
+
+/* Estilos customizados para WZAI */
+
+.cta-gold {
+  @apply px-8 py-3 rounded-lg bg-[#059669] text-[#0A0A0A] font-semibold transition-all duration-300;
+}
+
+.cta-gold:hover {
+  @apply transform -translate-y-0.5 shadow-lg;
+  box-shadow: 0 0 18px rgba(5, 150, 105, 0.35);
+  filter: brightness(1.05);
+}
+
+.card-noir {
+  @apply p-6 rounded-lg bg-[#1A1A1A] border border-[#2A2A2A] transition-all duration-300;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-noir:hover {
+  @apply border-[#059669]/30;
+}
+
+/* Grid wrapper para pares Antes/Depois */
+.comparison-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .comparison-pair {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Hover específico para card vermelho (Antes) */
+.card-noir.border-red-500\/20:hover {
+  background-color: rgba(255, 0, 0, 0.08);
+  border-color: rgba(255, 0, 0, 0.38);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover específico para card verde (Depois) */
+.card-noir.border-\[\#059669\]\/30:hover {
+  background-color: rgba(5, 150, 105, 0.08);
+  border-color: rgba(5, 150, 105, 0.38);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.gradient-gold-noir {
+  @apply bg-gradient-to-br from-[#059669]/15 to-[#1A3A52]/15 border border-[#059669]/30;
+}
+
+.input-noir {
+  @apply px-4 py-3 rounded-lg bg-[#1A1A1A] border border-[#2A2A2A] text-[#F5F5F5] placeholder-[#666666] transition-all duration-300;
+}
+
+.input-noir:focus {
+  @apply outline-none border-[#059669] bg-[#1A1A1A];
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.35);
+}
+
+.link-underline {
+  @apply relative text-[#F5F5F5] transition-colors duration-300;
+}
+
+.link-underline::after {
+  content: "";
+  @apply absolute left-0 bottom-0 w-0 h-px bg-[#F5F5F5] transition-all duration-300;
+}
+
+.link-underline:hover {
+  @apply text-[#059669];
+}
+
+.link-underline:hover::after {
+  @apply w-full;
+}
+
